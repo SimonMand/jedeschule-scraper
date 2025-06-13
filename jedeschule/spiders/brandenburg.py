@@ -4,6 +4,7 @@ from scrapy import Item
 
 from jedeschule.items import School
 from jedeschule.spiders.school_spider import SchoolSpider
+import logging
 
 
 class BrandenburgSpider(SchoolSpider):
@@ -14,6 +15,7 @@ class BrandenburgSpider(SchoolSpider):
     ]
 
     def parse(self, response):
+        logging.info("Inside BrandenburgSpider")
         tree = ET.fromstring(response.body)
 
         namespaces = {
