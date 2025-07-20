@@ -12,6 +12,7 @@ class SaarlandSpider(SchoolSpider):
     ]
 
     def parse(self, response):
+        i = 4
         tree = ET.fromstring(response.body)
 
         namespaces = {
